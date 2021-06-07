@@ -28,7 +28,7 @@ const PokemonTypeList = (props) => {
             return(
               <div className={"pokemon-item"}>
                 <p>{el.name}</p>
-                <Link to={`/types/${el.name}`}>View Pokemon of this Type</Link>
+                {/* <Link to={`/type/${el.name}`}>View Pokemon of this Type</Link> */}
               </div>
             )
           })}

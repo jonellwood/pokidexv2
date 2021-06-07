@@ -69,19 +69,20 @@ export const GetPokemonList = (page) => async dispatch => {
   export const GetType = (type) => async dispatch => {
     try {
       dispatch({
-        type: "POKEMON_MULTIPLE_LOADING"
+        type: "POKEMON_TYPE_LIST_LOADING"
       });
 
-      const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${type}`)
+      const res = await axios.get(`https://pokeapi.co/api/v2/type/${type}`)
+      // const res = await axios.get(`https://pokeapi.co/api/v2/type?limit=${perPage}&offset=${offset}`)
 
       dispatch({
-        type: "POKEMON_MULTIPLE_SUCCESS",
+        type: "POKEMON_TYPE_LIST_SUCCESS",
         payload: res.data,
         pokemonType: type,
       })
     } catch (e) {
       dispatch({
-        type: "POKEMON_MULTIPLE_FAIL",
+        type: "POKEMON_TYPE_LIST_FAIL",
       })
     }
   };

@@ -16,7 +16,7 @@ const PokemonTypeList = (props) => {
   const FetchData = (page = 1) => {
     dispatch(GetPokemonTypeList(page))
   }
-
+  console.log(pokemonTypeList.count);
   const ShowData = () => {
     if (pokemonTypeList.loading) {
       return <p>Loading...</p>
@@ -45,16 +45,16 @@ const PokemonTypeList = (props) => {
 
   return(
     <div>
-      {/* <div className={"search-wrapper"}>
+      <div className={"search-wrapper"}>
         <p>Search by Name: </p>
         <input type="text" onChange={e => setSearch(e.target.value)}/>
         <button onClick={() => props.history.push(`/pokemon/${search}`)} >Search</button>
-      </div> */}
+      </div>
       {ShowData()}
       {!_.isEmpty(pokemonTypeList.data) && (
         <ReactPaginate
-        pageCount={Math.ceil(pokemonTypeList.count / 15)}
-        pageRangeDisplayed={2}
+        pageCount={Math.ceil(pokemonTypeList.count / 10)}
+        pageRangeDisplayed={1}
         marginPagesDisplayed={1}
         onPageChange={(data) => FetchData(data.selected + 1)}
         containerClassName={"pagination"}

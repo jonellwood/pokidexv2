@@ -9,7 +9,7 @@
   /* width: 95%; */
   margin: 10px;
   margin: auto;
-  background-color: #85858560;
+  /* background-color: #85858560; */
   display: grid;
 }
 .poke h1{
@@ -50,7 +50,7 @@ nav a{
 }
 
 .list-wrapper .pokemon-item {
-  background-color: #ffcb0550;
+  background-color: #ffcb0570;
   margin: 5px 0;
   padding: 5px;
   display: flex;
@@ -104,7 +104,7 @@ nav a{
 .pokemon-item {
   margin: 5px 0;
   color: black;
-  background-color: #ffcb0550;
+  background-color: #ffcb0599;
   padding: 5px;
   text-transform: capitalize;
   border: #2a75bb 1px solid;
@@ -118,6 +118,11 @@ nav a{
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+.search-wrapper p{
+  background-color: #2a75bb50;
+  color: white;
+  font-weight: 500;
 }
 .pagination{
   display: flex;
@@ -140,4 +145,5 @@ nav a{
 .pagination li:hover {
   font-weight:700;
   background-color: #ffcb05;
+  border: 3px solid #2a75bb;
 }

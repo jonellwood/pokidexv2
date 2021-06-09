@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import _ from "lodash";
 import { GetType } from '../actions/pokemonActions';
 import {Link} from 'react-router-dom';
-import ReactPaginate from 'react-paginate';
+// import ReactPaginate from 'react-paginate';
 
 const PokemonByTypeList = (props) => {
   const [search, setSearch]= useState("");
@@ -51,15 +51,15 @@ const PokemonByTypeList = (props) => {
         <button onClick={() => props.history.push(`/pokemon/${search}`)} >Search</button>
       </div>
       {ShowData()}
-      {!_.isEmpty(pokemonByTypeList.data) && (
+      {/* {!_.isEmpty(pokemonByTypeList.data) && (
         <ReactPaginate
-          pageCount={Math.ceil(pokemonByTypeList.count / 15)}
+          pageCount={Math.ceil(pokemonByTypeList.count / 10)}
           pageRangeDisplayed={1}
           marginPagesDisplayed={1}
           onPageChange={(data) => FetchData(data.selected + 1)}
           containerClassName={"pagination"}
         />
-      )}
+      )} */}
     </div>
   )
 };

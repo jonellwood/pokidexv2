@@ -16,7 +16,7 @@ const PokemonTypeList = (props) => {
   const FetchData = (page = 1) => {
     dispatch(GetPokemonTypeList(page))
   }
-  console.log(pokemonTypeList.count);
+  console.log(pokemonTypeList);
   const ShowData = () => {
     if (pokemonTypeList.loading) {
       return <p>Loading...</p>
@@ -26,7 +26,7 @@ const PokemonTypeList = (props) => {
         <div className={"list-wrapper"}>
           {pokemonTypeList.data.map(el => {
             return(
-              <div className={"pokemon-item"}>
+              <div id={`${el.name}`} className={"pokemon-item"}>
                 <p>{el.name}</p>
                 {/* <Link to={`/type/${el.name}`}>View Pokemon of this Type</Link> */}
               </div>
@@ -42,13 +42,16 @@ const PokemonTypeList = (props) => {
 
     return <p>Unable to get damn data</p>
   };
+  const lowerSearch = (e) => {
+    e.toLowerCase();
+  };
 
   return(
     <div>
       <div className={"search-wrapper"}>
         <p>Search by Name: </p>
         <input type="text" onChange={e => setSearch(e.target.value)}/>
-        <button onClick={() => props.history.push(`/pokemon/${search}`)} >Search</button>
+        <button onClick={() => props.history.push(`/pokemon/${lowerSearch}`)} >Search</button>
       </div>
       {ShowData()}
       {!_.isEmpty(pokemonTypeList.data) && (

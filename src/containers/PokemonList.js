@@ -23,12 +23,15 @@ const PokemonList = (props) => {
         }
 
         if (!_.isEmpty(pokemonList.data)) {
+          console.log(pokemonList.data);
           return(
             <div className={"list-wrapper"}>
               {pokemonList.data.map(el => {
                 return(
                   <div className={"pokemon-item"}>
                     <p>{el.name}</p>
+                    {/* <img src={`https://img.pokemondb.net/sprites/bank/normal/${el.name}.png`}/> */}
+                    <img alt={`${el.name}`} src={`https://img.pokemondb.net/artwork/vector/${el.name}.png`}/>
                     <Link to={`/pokemon/${el.name}`}>View</Link>
                   </div>
                 )

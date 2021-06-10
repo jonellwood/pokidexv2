@@ -1,6 +1,6 @@
 const DefaultState = {
   loading: false,
-  data: [],
+  data: {},
   errorMsg: "",
   count: 0
 };
@@ -24,12 +24,12 @@ const PokemonTypeMultipleReducer = (state = DefaultState, action) => {
               ...state,
               loading: false,
               errorMsg: "",
-              data: action.payload.results,
-              count: action.payload.count,
-              // data: {
-              //     ...state.data,
-              //     [action.pokemonType]: action.payload
-              // }
+            //   data: action.payload.results,
+            //   count: action.payload.count,
+              data: {
+                  ...state.data,
+                  [action.pokemonType]: action.payload
+              }
           };
       default:
           return state

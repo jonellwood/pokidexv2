@@ -16,7 +16,7 @@ const PokemonTypeList = (props) => {
   const FetchData = (page = 1) => {
     dispatch(GetPokemonTypeList(page))
   }
-  console.log(pokemonTypeList);
+  // console.log(pokemonTypeList);
   const ShowData = () => {
     if (pokemonTypeList.loading) {
       return <p>Loading...</p>
@@ -28,7 +28,7 @@ const PokemonTypeList = (props) => {
             return(
               <div id={`${el.name}`} className={"pokemon-item"}>
                 <p>{el.name}</p>
-                {/* <Link to={`/type/${el.name}`}>View Pokemon of this Type</Link> */}
+                <Link to={`/types/${el.name}`}>View List</Link>
               </div>
             )
           })}

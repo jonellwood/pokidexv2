@@ -8,7 +8,7 @@ const RootReducer = combineReducers({
     PokemonList: PokemonListReducer,
     Pokemon: PokemonMultipleReducer,
     PokemonTypeList: PokemonTypeListReducer,
-    Types: PokemonTypeMultipleReducer,
+    Type: PokemonTypeMultipleReducer,
 });
 
 export default RootReducer;

@@ -1,5 +1,3 @@
-import PokemonListReducer from "./PokemonListReducer";
-
 const DefaultState = {
     loading: false,
     data: {},

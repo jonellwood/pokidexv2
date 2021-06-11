@@ -3,20 +3,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import {GetPokemon } from '../actions/pokemonActions';
 import _ from 'lodash';
 import Type from './Type';
-// import axios from 'axios';
+import {GetType} from '../actions/pokemonActions';
+
 
 const Pokemon = (props) => {
     const pokemonName = props.match.params.pokemon;
+    // const typeName = props.match.params.type;
     const dispatch = useDispatch();
     const PokemonState = useSelector(state => state.Pokemon);
     React.useEffect(() => {
       dispatch(GetPokemon(pokemonName))
     }, []);
+    // const TypeState = useSelector(state => state.Type);
+    // React.useEffect(() => {
+    //   dispatch(GetType(typeName))
+    // }, []);
+    // console.log(pokemonName);
     
     const ShowData = () => {
       if (!_.isEmpty(PokemonState.data[pokemonName])) {
         const pokeData = PokemonState.data[pokemonName];
         const pokeType = pokeData.types[0].type.name;
+        // const typeData = TypeState.data[pokeType];
         console.log(pokeType);
 
         return (

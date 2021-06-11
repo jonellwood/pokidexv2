@@ -1,57 +1,60 @@
-import React, { useState }from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import _ from "lodash";
-import { GetPokemonTypeList } from '../actions/pokemonActions';
-import {Link} from 'react-router-dom';
-import ReactPaginate from 'react-paginate';
+import { GetPokemonTypeList } from "../actions/pokemonActions";
+import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const PokemonTypeList = (props) => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  const pokemonTypeList = useSelector(state => state.PokemonTypeList);
+  const pokemonTypeList = useSelector((state) => state.PokemonTypeList);
   React.useEffect(() => {
-    FetchData(1)
+    FetchData(1);
   }, []);
 
   const FetchData = (page = 1) => {
-    dispatch(GetPokemonTypeList(page))
-  }
+    dispatch(GetPokemonTypeList(page));
+  };
   // console.log(pokemonTypeList);
   const ShowData = () => {
     if (pokemonTypeList.loading) {
-      return <p>Loading...</p>
+      return <p>Loading...</p>;
     }
     if (!_.isEmpty(pokemonTypeList.data)) {
-      return(
-        <div className={"list-wrapper"}>
-          {pokemonTypeList.data.map(el => {
-            return(
+      return (
+        <div className={"list-wrapper"} id="link_list">
+          {pokemonTypeList.data.map((el) => {
+            return (
               <div id={`${el.name}`} className={"pokemon-item"}>
+                <Link to={`/typeData/${el.name}`}>Details</Link>
                 <p>{el.name}</p>
-                <Link to={`/types/${el.name}`}>View List</Link>
+                <Link to={`/types/${el.name}`}>List</Link>
               </div>
-            )
+            );
           })}
         </div>
-      )
+      );
     }
 
     if (pokemonTypeList.errorMsg !== "") {
-      return <p>{pokemonTypeList.errorMsg}</p>
+      return <p>{pokemonTypeList.errorMsg}</p>;
     }
 
-    return <p>Unable to get damn data</p>
+    return <p>Unable to get damn data</p>;
   };
   const lowerSearch = (e) => {
     e.toLowerCase();
   };
 
-  return(
+  return (
     <div>
       <div className={"search-wrapper"}>
         <p>Search by Name: </p>
-        <input type="text" onChange={e => setSearch(e.target.value)}/>
-        <button onClick={() => props.history.push(`/pokemon/${lowerSearch}`)} >Search</button>
+        <input type="text" onChange={(e) => setSearch(e.target.value)} />
+        <button onClick={() => props.history.push(`/pokemon/${lowerSearch}`)}>
+          Search
+        </button>
       </div>
       {ShowData()}
       {/* {!_.isEmpty(pokemonTypeList.data) && (
@@ -64,7 +67,7 @@ const PokemonTypeList = (props) => {
         />
       )} */}
     </div>
-  )
+  );
 };
 
 export default PokemonTypeList;

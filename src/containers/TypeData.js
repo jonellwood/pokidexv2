@@ -34,9 +34,9 @@ const Type = (props) => {
               <h2>Double Damage From</h2>
               {typeData.damage_relations.double_damage_from.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -46,9 +46,9 @@ const Type = (props) => {
               <h2>Double Damage To</h2>
               {typeData.damage_relations.double_damage_to.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -58,9 +58,9 @@ const Type = (props) => {
               <h2>Half Damage From</h2>
               {typeData.damage_relations.half_damage_from.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -70,9 +70,9 @@ const Type = (props) => {
               <h2>Half Damage To</h2>
               {typeData.damage_relations.half_damage_to.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -82,9 +82,9 @@ const Type = (props) => {
               <h2>No Damage From</h2>
               {typeData.damage_relations.no_damage_from.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -94,9 +94,9 @@ const Type = (props) => {
               <h2>No Damage To</h2>
               {typeData.damage_relations.no_damage_to.map((el) => {
                 return (
-                  <div className="damage_list">
+                  <div className="damage_list" id={el.name}>
                     <li>
-                      <li id={el.name}>{el.name}</li>
+                      <li>{el.name}</li>
                     </li>
                   </div>
                 );
@@ -104,7 +104,7 @@ const Type = (props) => {
             </div>
           </div>
 
-          <div className="list-wrapper">
+          {/* <div className="list-wrapper">
             {typeData.pokemon.map((el) => {
               return (
                 <div className="pokemon-item" id={typeName}>
@@ -117,7 +117,7 @@ const Type = (props) => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </>
       );
     }

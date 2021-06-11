@@ -83,6 +83,9 @@ nav a {
 .pokemon-item img {
   width: 150px;
 }
+.pokemon-item p a {
+  text-decoration: wavy;
+}
 .pokemon-item p a:hover {
   font-weight: 700;
   background-color: #ffcb05;
@@ -180,11 +183,6 @@ nav a {
 .damage-list-wrapper {
   padding-bottom: 20px;
 }
-.damage-list-wrapper div {
-  display: grid;
-  grid-template-columns: 1fr;
-  /* border: #2a75bb solid 2px; */
-}
 .damage_list {
   display: flex;
   justify-items: auto;
@@ -193,14 +191,20 @@ nav a {
   list-style-type: none;
   border: 1px solid #2a75bb;
   border-radius: 7px;
-  padding: 2px;
+  padding: 3px;
+}
+.damage_list li {
+  font-weight: 700;
 }
 .pokemon-item h2 {
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   background-color: #3c5aa650;
   border: 1px solid #2a75bb;
   border-radius: 7px;
+}
+#link_list a {
+  color: aliceblue;
 }
 #grass {
   background-color: #77cc5590;

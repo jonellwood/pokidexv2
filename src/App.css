@@ -1,18 +1,18 @@
 * {
   box-sizing: border-box;
 }
-#root{
+#root {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png");
   background-size: contain;
 }
-.poke{
+.poke {
   /* width: 95%; */
   margin: 10px;
   margin: auto;
   /* background-color: #85858560; */
   display: grid;
 }
-.poke h1{
+.poke h1 {
   text-transform: capitalize;
   font-weight: 700;
   text-align: center;
@@ -35,7 +35,7 @@ nav {
   background-color: #3c5aa6;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   font-size: larger;
   font-weight: 700;
@@ -45,7 +45,8 @@ nav a{
 }
 
 .list-wrapper,
-.type-list-wraper{
+.damage-list-wrapper,
+.type-list-wraper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 5px;
@@ -53,13 +54,13 @@ nav a{
   margin: auto;
 }
 @media only screen and (max-width: 1200px) {
-  .list-wrapper{
+  .list-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .list-wrapper{
+  .list-wrapper {
     grid-template-columns: 1fr;
   }
 }
@@ -75,41 +76,41 @@ nav a{
   border-radius: 7px;
   padding: 10px;
 }
-.pokemon-item p{
+.pokemon-item p {
   text-transform: capitalize;
   font-weight: bolder;
 }
-.pokemon-item img{
+.pokemon-item img {
   width: 150px;
 }
-.pokemon-item p a:hover{
-  font-weight:700;
+.pokemon-item p a:hover {
+  font-weight: 700;
   background-color: #ffcb05;
   /* border: 3px solid #2a75bb; */
 }
-.pokePicDiv{
+.pokePicDiv {
   width: 100%;
 }
-.pokePic{
+.pokePic {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.pokeTypeName{
+.pokeTypeName {
   text-transform: capitalize;
 }
 
 .list-wrapper a {
-  color:black;
+  color: black;
   font-weight: 700;
   text-decoration: none;
   /* text-shadow: 1px 1px 1px #ffcb05; */
 }
 
-.pokemon-photo-wrapper{
+.pokemon-photo-wrapper {
   display: block;
 }
-.pokemon-wrapper{
+.pokemon-wrapper {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -118,7 +119,7 @@ nav a{
   gap: 2rem;
 }
 
-.pokemon-wrapper .items{
+.pokemon-wrapper .items {
   margin: 1em;
   /* border: hotpink 2px solid; */
   padding: 10px;
@@ -144,12 +145,12 @@ nav a{
   align-items: center;
   margin: 20px 0;
 }
-.search-wrapper p{
+.search-wrapper p {
   background-color: #2a75bb50;
   color: white;
   font-weight: 500;
 }
-.pagination{
+.pagination {
   display: flex;
   width: 500px;
   margin: auto;
@@ -168,75 +169,98 @@ nav a{
   cursor: pointer;
 }
 .pagination li:hover {
-  font-weight:700;
+  font-weight: 700;
   background-color: #ffcb05;
   border: 3px solid #2a75bb;
 }
-.type-list-item{
+.type-list-item {
   text-transform: capitalize;
+  text-decoration: none;
 }
-#grass{
+.damage-list-wrapper {
+  padding-bottom: 20px;
+}
+.damage-list-wrapper div {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* border: #2a75bb solid 2px; */
+}
+.damage_list {
+  display: flex;
+  justify-items: auto;
+  text-transform: capitalize;
+  margin: 2px;
+  list-style-type: none;
+  border: 1px solid #2a75bb;
+  border-radius: 7px;
+  padding: 2px;
+}
+.pokemon-item h2 {
+  text-align: center;
+  font-weight: 700;
+  background-color: #3c5aa650;
+  border: 1px solid #2a75bb;
+  border-radius: 7px;
+}
+#grass {
   background-color: #77cc5590;
 }
-#poison{
+#poison {
   background-color: #aa559990;
 }
-#fire{
-  background-color: #EE813090;
+#fire {
+  background-color: #ee813090;
 }
-#fighting{
+#fighting {
   background-color: #bb554490;
 }
-#rock{
+#rock {
   background-color: #bbaa6690;
 }
-#ghost{
+#ghost {
   background-color: #6666bb90;
 }
-#flying{
+#flying {
   background-color: #8899ff90;
 }
-#ground{
+#ground {
   background-color: #ddbb5590;
 }
-#bug{
+#bug {
   background-color: #aabb2290;
 }
-#steel{
+#steel {
   background-color: #aaaabb90;
 }
-#water{
+#water {
   background-color: #3399ff90;
 }
-#dragon{
+#dragon {
   background-color: #7766ee90;
 }
-#normal{
-  background-color: #A8A77A90;
+#normal {
+  background-color: #a8a77a90;
 }
-#electric{
+#electric {
   background-color: #ffcc3390;
 }
-#psychic{
+#psychic {
   background-color: #ff559990;
 }
-#dark{
+#dark {
   background-color: #77554490;
 }
-#fairy{
+#fairy {
   background-color: #ee99ee90;
 }
-#shadow{
+#shadow {
   display: none;
   background-color: #604e8290;
 }
-#ice{
-  background-color: #96D9D690;
+#ice {
+  background-color: #96d9d690;
 }
-#unknown{
+#unknown {
   display: none;
   background-color: #ff732790;
 }
-
-
-

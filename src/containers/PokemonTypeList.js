@@ -54,7 +54,7 @@ const PokemonTypeList = (props) => {
         <button onClick={() => props.history.push(`/pokemon/${lowerSearch}`)} >Search</button>
       </div>
       {ShowData()}
-      {!_.isEmpty(pokemonTypeList.data) && (
+      {/* {!_.isEmpty(pokemonTypeList.data) && (
         <ReactPaginate
         pageCount={Math.ceil(pokemonTypeList.count / 10)}
         pageRangeDisplayed={1}
@@ -62,7 +62,7 @@ const PokemonTypeList = (props) => {
         onPageChange={(data) => FetchData(data.selected + 1)}
         containerClassName={"pagination"}
         />
-      )}
+      )} */}
     </div>
   )
 };

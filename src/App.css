@@ -82,6 +82,11 @@ nav a{
 .pokemon-item img{
   width: 150px;
 }
+.pokemon-item p a:hover{
+  font-weight:700;
+  background-color: #ffcb05;
+  /* border: 3px solid #2a75bb; */
+}
 .pokePicDiv{
   width: 100%;
 }
@@ -128,6 +133,7 @@ nav a{
   text-transform: capitalize;
   border: #2a75bb 1px solid;
 }
+
 /* .abilityList{
   margin-right: 50px;
 } */
@@ -221,12 +227,14 @@ nav a{
   background-color: #ee99ee90;
 }
 #shadow{
+  display: none;
   background-color: #604e8290;
 }
 #ice{
   background-color: #96D9D690;
 }
 #unknown{
+  display: none;
   background-color: #ff732790;
 }
 

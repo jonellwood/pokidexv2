@@ -1,20 +1,24 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {GetPokemon} from '../actions/pokemonActions';
+import {GetPokemon } from '../actions/pokemonActions';
 import _ from 'lodash';
+import Type from './Type';
+// import axios from 'axios';
 
 const Pokemon = (props) => {
     const pokemonName = props.match.params.pokemon;
     const dispatch = useDispatch();
     const PokemonState = useSelector(state => state.Pokemon);
     React.useEffect(() => {
-        dispatch(GetPokemon(pokemonName))
-    }, [])
-
+      dispatch(GetPokemon(pokemonName))
+    }, []);
+    
     const ShowData = () => {
       if (!_.isEmpty(PokemonState.data[pokemonName])) {
         const pokeData = PokemonState.data[pokemonName];
-        // console.log(pokeData);
+        const pokeType = pokeData.types[0].type.name;
+        console.log(pokeType);
+
         return (
           <div className={"pokemon-photo-wrapper"}>
             <div className={"items"}>
@@ -24,14 +28,16 @@ const Pokemon = (props) => {
               <img className="pokePic" src={pokeData.sprites.back_shiny} alt={pokemonName} /> */}
           </div>
           <div className={"pokemon-wrapper"}>
-              <div className="items">
+              {/* <div className="items">
                 <h1>Info</h1>
-                <p className="pokeTypeName">Type: {pokeData.types[0].type.name}</p>
+                
                 <p className="pokeTypeName">Height: {pokeData.height} units?</p>
                 <p className="pokeTypeName">Weight: {pokeData.weight} units?</p>
-              </div>
+              </div> */}
             <div className="items">
               <h1>Stats</h1>
+                <p className="pokeTypeName">Height: {pokeData.height} units?</p>
+                <p className="pokeTypeName">Weight: {pokeData.weight} units?</p>
               {pokeData.stats.map(el => {
                 return <p className="statlist">{el.stat.name} - {el.base_stat}</p>
               })}
@@ -41,6 +47,12 @@ const Pokemon = (props) => {
               {pokeData.abilities.map(el => {
                 return <p className="abilityList">{el.ability.name}</p>
               })}
+            </div>
+            <div className="items">
+              <h1>Type Information</h1>
+              <p className="pokeTypeName">Type: {pokeData.types[0].type.name}</p>
+              
+              
             </div>
             <div className="items">
               <h1>Moves</h1>
@@ -62,11 +74,14 @@ const Pokemon = (props) => {
       }
       return <p>Error in your life.</p>
     }
-
+    
     return(
         <div className={"poke"}>
           <h1>{pokemonName}</h1>
           {ShowData()}
+          {/* <Type 
+          type={ PokemonState.data[pokemonName].types[0].type.name}
+          /> */}
         </div>
     )
 };

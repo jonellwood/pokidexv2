@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {GetPokemon } from '../actions/pokemonActions';
 import _ from 'lodash';
 import Type from './Type';
-import {GetType} from '../actions/pokemonActions';
+// import {GetType} from '../actions/pokemonActions';
 
 
 const Pokemon = (props) => {
@@ -20,13 +20,13 @@ const Pokemon = (props) => {
     // }, []);
     // console.log(pokemonName);
     
+
     const ShowData = () => {
       if (!_.isEmpty(PokemonState.data[pokemonName])) {
-        const pokeData = PokemonState.data[pokemonName];
+        const pokeData = PokemonState.data[pokemonName];0
         const pokeType = pokeData.types[0].type.name;
         // const typeData = TypeState.data[pokeType];
         console.log(pokeType);
-
         return (
           <div className={"pokemon-photo-wrapper"}>
             <div className={"items"}>
@@ -87,9 +87,7 @@ const Pokemon = (props) => {
         <div className={"poke"}>
           <h1>{pokemonName}</h1>
           {ShowData()}
-          {/* <Type 
-          type={ PokemonState.data[pokemonName].types[0].type.name}
-          /> */}
+          {/* <Type type={pokeType} /> */}
         </div>
     )
 };

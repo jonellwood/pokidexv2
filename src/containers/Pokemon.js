@@ -23,7 +23,7 @@ const Pokemon = (props) => {
 
     const ShowData = () => {
       if (!_.isEmpty(PokemonState.data[pokemonName])) {
-        const pokeData = PokemonState.data[pokemonName];0
+        const pokeData = PokemonState.data[pokemonName];
         const pokeType = pokeData.types[0].type.name;
         // const typeData = TypeState.data[pokeType];
         console.log(pokeType);

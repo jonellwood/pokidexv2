@@ -62,11 +62,17 @@ nav a {
   .list-wrapper {
     grid-template-columns: 1fr 1fr;
   }
+  .damage-list-wrapper{
+    grid-template-columns: 1fr 1fr;
+  }
   
 }
 
 @media only screen and (max-width: 600px) {
   .list-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .damage-list-wrapper{
     grid-template-columns: 1fr;
   }
 }

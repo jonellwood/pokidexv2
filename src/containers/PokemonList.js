@@ -51,7 +51,7 @@ const PokemonList = (props) => {
         <div>
             <div className={"search-wrapper"}>
               <p>Search by Name: </p>
-              <input type="text" onChange={e => setSearch(e.target.value)}/>
+              <input type="text" onChange={e => setSearch(e.target.value.toLowerCase())}/>
               <button onClick={() => props.history.push(`/pokemon/${search}`)} >Search</button>
             </div>
             {ShowData()}

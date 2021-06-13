@@ -43,16 +43,16 @@ const PokemonTypeList = (props) => {
 
     return <p>Unable to get damn data</p>;
   };
-  const lowerSearch = (e) => {
-    e.toLowerCase();
-  };
+  // const lowerSearch = (e) => {
+  //   e.toLowerCase();
+  // };
 
   return (
     <div>
       <div className={"search-wrapper"}>
         <p>Search by Name: </p>
-        <input type="text" onChange={(e) => setSearch(e.target.value)} />
-        <button onClick={() => props.history.push(`/pokemon/${lowerSearch}`)}>
+        <input type="text" onChange={(e) => setSearch(e.target.value.toLowerCase())} />
+        <button onClick={() => props.history.push(`/pokemon/${search}`)}>
           Search
         </button>
       </div>

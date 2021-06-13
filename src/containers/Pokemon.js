@@ -4,7 +4,7 @@ import {GetPokemon } from '../actions/pokemonActions';
 import _ from 'lodash';
 import Type from './Type';
 // import {GetType} from '../actions/pokemonActions';
-
+import { Link } from 'react-router-dom'; 
 
 const Pokemon = (props) => {
     const pokemonName = props.match.params.pokemon;
@@ -58,7 +58,8 @@ const Pokemon = (props) => {
             </div>
             <div className="items">
               <h1>Type Information</h1>
-              <p className="pokeTypeName">Type: {pokeData.types[0].type.name}</p>
+              <Link to={`/typeData/${pokeType}`}> <p className="pokeTypeName">Type: {pokeType}</p> </Link>
+              
               
               
             </div>

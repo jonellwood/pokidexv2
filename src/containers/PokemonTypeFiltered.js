@@ -28,7 +28,7 @@ const PokemonByTypeList = (props) => {
           {pokemonByTypeList.data.map(el => {
             return(
               <div className={"pokemon-item"}>
-                <p>{el.name}</p>
+                <Link to={`/typeData/${el.name}`}><p>{el.name}</p></Link>
                 <Link to={"/"}>Home</Link>
               </div>
             )

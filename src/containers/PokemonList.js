@@ -29,7 +29,7 @@ const PokemonList = (props) => {
               {pokemonList.data.map(el => {
                 return(
                   <div className={"pokemon-item"}>
-                    <p>{el.name}</p>
+                    <Link to={`/pokemon/${el.name}`}><p>{el.name}</p></Link>
                     {/* <img src={`https://img.pokemondb.net/sprites/bank/normal/${el.name}.png`}/> */}
                     <img alt={`${el.name}`} src={`https://img.pokemondb.net/artwork/vector/${el.name}.png`}/>
                     <p><Link to={`/pokemon/${el.name}`}>View</Link></p>

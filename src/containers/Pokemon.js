@@ -2,31 +2,21 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {GetPokemon } from '../actions/pokemonActions';
 import _ from 'lodash';
-import Type from './Type';
-// import {GetType} from '../actions/pokemonActions';
 import { Link } from 'react-router-dom'; 
 
 const Pokemon = (props) => {
     const pokemonName = props.match.params.pokemon;
-    // const typeName = props.match.params.type;
     const dispatch = useDispatch();
     const PokemonState = useSelector(state => state.Pokemon);
     React.useEffect(() => {
       dispatch(GetPokemon(pokemonName))
     }, []);
-    // const TypeState = useSelector(state => state.Type);
-    // React.useEffect(() => {
-    //   dispatch(GetType(typeName))
-    // }, []);
-    // console.log(pokemonName);
-    
+       
 
     const ShowData = () => {
       if (!_.isEmpty(PokemonState.data[pokemonName])) {
         const pokeData = PokemonState.data[pokemonName];
-        const pokeType = pokeData.types[0].type.name;
-        // const typeData = TypeState.data[pokeType];
-        console.log(pokeType);
+        
         return (
           <div className={"pokemon-photo-wrapper"}>
             <div className={"items"}>
@@ -36,13 +26,7 @@ const Pokemon = (props) => {
               <img className="pokePic" src={pokeData.sprites.back_shiny} alt={pokemonName} /> */}
           </div>
           <div className={"pokemon-wrapper"}>
-              {/* <div className="items">
-                <h1>Info</h1>
-                
-                <p className="pokeTypeName">Height: {pokeData.height} units?</p>
-                <p className="pokeTypeName">Weight: {pokeData.weight} units?</p>
-              </div> */}
-            <div className="items">
+              <div className="items">
               <h1>Stats</h1>
                 <p className="pokeTypeName">Height: {pokeData.height} units?</p>
                 <p className="pokeTypeName">Weight: {pokeData.weight} units?</p>
@@ -58,9 +42,12 @@ const Pokemon = (props) => {
             </div>
             <div className="items">
               <h1>Type Information</h1>
-              <Link to={`/typeData/${pokeType}`}> <p className="pokeTypeName">Type: {pokeType}</p> </Link>
-              
-              
+              {pokeData.types.map(el => {
+                
+                return (<Link to={`/typeData/${el.type.name}`}><p className="abilityList" id={`${el.type.name}`}>{el.type.name}</p>
+                </Link>)
+              })}
+           
               
             </div>
             <div className="items">
